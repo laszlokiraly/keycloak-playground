@@ -1,0 +1,58 @@
+{
+    "clientName": "Thunder Client",
+    "environmentName": "Keycloak",
+    "environmentId": "c595868c-f367-4976-9bb6-997dc4b3e56b",
+    "dateExported": "2024-09-26T07:14:00.015Z",
+    "version": "1.2",
+    "variables": [
+        {
+            "name": "server",
+            "value": "http://localhost:8080"
+        },
+        {
+            "name": "realm",
+            "value": "los"
+        },
+        {
+            "name": "redirect",
+            "value": "http://localhost:8084/"
+        },
+        {
+            "name": "refresh_token",
+            "value": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2ODljZWUzOC1mNDkwLTRjNWItYTFhNi1kODY3MjY2NTJjYjkifQ.eyJleHAiOjE3MjczMzY1MTEsImlhdCI6MTcyNzMzNDcxMSwianRpIjoiNWJjNmU2ZDMtZTM2Mi00NjBkLThkN2ItY2YwYTkwODM2NDg2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9sb3MiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL2xvcyIsInN1YiI6ImM5ZmFjOGY5LTgwZDktNDU1YS1hYzM0LTI3YzZmODBjY2QyMSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJsb3NsZWJlbi1hcHAiLCJzaWQiOiIzYmFkNmVlMi00ODgyLTQ3ZWEtYTc3OC00OTE0OWJiMDNhZjAiLCJzY29wZSI6Im9wZW5pZCB3ZWItb3JpZ2lucyBlbWFpbCByb2xlcyBhY3IgYmFzaWMgcHJvZmlsZSJ9.I9v83ucXV384olqAWeoEf_JnKouYMKi8LyKJkyq9EZGXnvcIdQk5P-5gyQU5sTyeddN4k0b7JeshkMYDsx55gA"
+        },
+        {
+            "name": "test_user",
+            "value": "test"
+        },
+        {
+            "name": "test_password",
+            "value": "test"
+        },
+        {
+            "name": "access_token",
+            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFX3ljRzNxbzB5eWU1MUdEWkp0c0hfdUF0UDd5TnJPdzREYmxWTTd6QjZFIn0.eyJleHAiOjE3MjczMzUwMTEsImlhdCI6MTcyNzMzNDcxMSwianRpIjoiMjFjYjI4MGUtZjQ1MS00ZDY0LWI4YWUtZDVlODc4ZWMzNWI0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9sb3MiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYzlmYWM4ZjktODBkOS00NTVhLWFjMzQtMjdjNmY4MGNjZDIxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibG9zbGViZW4tYXBwIiwic2lkIjoiM2JhZDZlZTItNDg4Mi00N2VhLWE3NzgtNDkxNDliYjAzYWYwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODEiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWxvcyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJ0ZXN0IHRlc3QiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0IiwiZ2l2ZW5fbmFtZSI6InRlc3QiLCJmYW1pbHlfbmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20ifQ.sppGa9UUSNDwnKGnoFC3wpdIU6pSDVE17u44bd_vWqM6SUGOEEaO48-UZj1Foani2dP5zK44acDOZ6dzP2bbIn4Kh68WYKBQDXDEr1p3RkJacd5lXcUReY95t52pFwvkvIRvES60xTD4DVp6ed9-VS7007CxwddrvvhFBk8moKBSjJ-PrB5is19gIt7qBRye0raYGJnPu5Edyi5aw453_PMlavzUztRMonBSR5HWhRQJiyZGVPwJFDmCL5BgF1Wx85Pf0mjTACTa84G4cUOMao7b98IxD28gKfJhigO5EoGRe9x_BKOhvGk5P-Zc7g1I6rdbR-FXewhexuqFA2l_Cw"
+        },
+        {
+            "name": "jwtClient",
+            "value": "losleben-app"
+        },
+        {
+            "name": "base64Basic",
+            "value": "dW5kZWZpbmVkOnVuZGVmaW5lZA=="
+        },
+        {
+            "name": "authorization_code",
+            "value": ""
+        },
+        {
+            "name": "action",
+            "value": "document.getElementById('kc-form-login').action"
+        },
+        {
+            "name": "id_token",
+            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFX3ljRzNxbzB5eWU1MUdEWkp0c0hfdUF0UDd5TnJPdzREYmxWTTd6QjZFIn0.eyJleHAiOjE3MjczMzUwMTEsImlhdCI6MTcyNzMzNDcxMSwianRpIjoiY2UxMjc1ZTItNTU2MC00Nzg3LTliOGYtYjdmMDYxOTJkMDg1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9sb3MiLCJhdWQiOiJsb3NsZWJlbi1hcHAiLCJzdWIiOiJjOWZhYzhmOS04MGQ5LTQ1NWEtYWMzNC0yN2M2ZjgwY2NkMjEiLCJ0eXAiOiJJRCIsImF6cCI6Imxvc2xlYmVuLWFwcCIsInNpZCI6IjNiYWQ2ZWUyLTQ4ODItNDdlYS1hNzc4LTQ5MTQ5YmIwM2FmMCIsImF0X2hhc2giOiJYdlJ3RGt3aGlYSU5JdUVuZHRDd0xRIiwiYWNyIjoiMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6InRlc3QgdGVzdCIsInByZWZlcnJlZF91c2VybmFtZSI6InRlc3QiLCJnaXZlbl9uYW1lIjoidGVzdCIsImZhbWlseV9uYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSJ9.U8Si4qlbxrfemM6apXn-F5mx_T4zQq28v31StU5h5VDURVqZ_i-lUInLe4aWye_Z6-cAbkkHUVaJSK-XX0vDygTOPEdy64jHSoFHl_u_RxfnO_ozeOOitGr9OrgsTbNF5bwo3u0v055nykNwIp9W72VEK5QXQE3fr6SmO6TNK7gdAsnj15vqg3gKX9RwRFm8hl9dI0oYROtRIYU80VEUXZNxW28xIbEjtBfATYcPpxTAmzKdDo3t9hJK-j7lqFncNhmuinM9m-Ly7Ta2oxTTl-A-76SJuLTZj2HZXWJ807_V0r712u4w3DtfKqJBp8-qN2sBDQflquCV0M62LRK9SQ"
+        }
+    ],
+    "ref": "jMaqujsvVOSN4PzfuKMoZOP3FlrAb8dd8yD74dP35nX1eth1ZWN4KoGPunI8pG0ehmsR_xbmDZLXxrstnSRutQ"
+}

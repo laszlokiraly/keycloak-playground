@@ -1,0 +1,491 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Keycloak",
+    "collectionId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+    "dateExported": "2024-09-26T07:13:41.694Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ed982150-347a-4d8e-a0f6-cc7d1f004623",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC Implicit",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/token",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-09-26T06:33:57.539Z",
+            "modified": "2024-09-26T06:53:05.534Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "client_id",
+                        "value": "{{jwtClient}}"
+                    },
+                    {
+                        "name": "grant_type",
+                        "value": "password"
+                    },
+                    {
+                        "name": "username",
+                        "value": "test"
+                    },
+                    {
+                        "name": "password",
+                        "value": "test"
+                    },
+                    {
+                        "name": "scope",
+                        "value": "openid"
+                    }
+                ]
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.access_token",
+                    "action": "setto",
+                    "value": "{{access_token}}"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "json.refresh_token",
+                    "action": "setto",
+                    "value": "{{refresh_token}}"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "json.id_token",
+                    "action": "setto",
+                    "value": "{{id_token}}"
+                }
+            ]
+        },
+        {
+            "_id": "a1bea9c4-edf8-4fe8-8ead-d81b96b0cabc",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC AuthCode Step 1 (Init): Copy action from 'kc-form-login' and use it as URL in Step 2",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/auth?client_id={{jwtClient}}&response_type=code&state=fj8o3n7bdy1op5&redirect_uri={{redirect}}&scope=openid",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-09-26T04:29:19.193Z",
+            "modified": "2024-09-26T05:28:17.035Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "client_id",
+                    "value": "{{jwtClient}}",
+                    "isPath": false
+                },
+                {
+                    "name": "response_type",
+                    "value": "code",
+                    "isPath": false
+                },
+                {
+                    "name": "state",
+                    "value": "fj8o3n7bdy1op5",
+                    "isPath": false
+                },
+                {
+                    "name": "redirect_uri",
+                    "value": "{{redirect}}",
+                    "isPath": false
+                },
+                {
+                    "name": "scope",
+                    "value": "openid",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "document.getElementById('kc-form-login').action",
+                    "action": "setto",
+                    "value": "{{action}}"
+                }
+            ]
+        },
+        {
+            "_id": "070e53cc-138a-4493-ba9d-18be4558672c",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC AuthCode Step 2 (Login): Use action from 'kc-form-login' from Step 1 as URL",
+            "url": "http://localhost:8080/realms/los/login-actions/authenticate?session_code=Pp6f4ooGNev_7DZVwAhefZcEtb14oHLp5rs2H7O2iEA&amp;execution=f839f614-76a5-459a-96d8-a19352c0cc2c&amp;client_id=losleben-app&amp;tab_id=yFFHRv3slF4&amp;client_data=eyJydSI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4NC8iLCJydCI6ImNvZGUiLCJzdCI6ImZqOG8zbjdiZHkxb3A1In0",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2024-09-26T02:28:01.911Z",
+            "modified": "2024-09-26T06:31:25.863Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "session_code",
+                    "value": "Pp6f4ooGNev_7DZVwAhefZcEtb14oHLp5rs2H7O2iEA",
+                    "isPath": false
+                },
+                {
+                    "name": "amp;execution",
+                    "value": "f839f614-76a5-459a-96d8-a19352c0cc2c",
+                    "isPath": false
+                },
+                {
+                    "name": "amp;client_id",
+                    "value": "losleben-app",
+                    "isPath": false
+                },
+                {
+                    "name": "amp;tab_id",
+                    "value": "yFFHRv3slF4",
+                    "isPath": false
+                },
+                {
+                    "name": "amp;client_data",
+                    "value": "eyJydSI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4NC8iLCJydCI6ImNvZGUiLCJzdCI6ImZqOG8zbjdiZHkxb3A1In0",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "test"
+                    },
+                    {
+                        "name": "password",
+                        "value": "test"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "572373b9-7975-432c-b582-4306b42a5917",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC AuthCode Step 3 (Token): get code from Step 2 or re-execute Step 1 (code is in redirect_uri)",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/token",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-09-26T02:22:33.513Z",
+            "modified": "2024-09-26T06:31:43.338Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "client_id",
+                        "value": "{{jwtClient}}"
+                    },
+                    {
+                        "name": "grant_type",
+                        "value": "authorization_code"
+                    },
+                    {
+                        "name": "state",
+                        "value": "fj8o3n7bdy1op5"
+                    },
+                    {
+                        "name": "redirect_uri",
+                        "value": "{{redirect}}"
+                    },
+                    {
+                        "name": "code",
+                        "value": "83d56a03-2efe-4483-ae1b-7b6cbffa8318.d1c85ec8-9692-4715-a190-38c38000ca9b.50ab0ade-a132-4bb7-9b54-3fcf41d851bc"
+                    }
+                ]
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.access_token",
+                    "action": "setto",
+                    "value": "{{access_token}}"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "json.refresh_token",
+                    "action": "setto",
+                    "value": "{{refresh_token}}"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "json.id_token",
+                    "action": "setto",
+                    "value": "{{id_token}}"
+                }
+            ]
+        },
+        {
+            "_id": "ae0e52af-b725-4ebb-a5cc-bf44b9c788b6",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC Logout (from single session)",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/logout",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-09-26T05:08:31.513Z",
+            "modified": "2024-09-26T06:53:58.322Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "client_id",
+                        "value": "{{jwtClient}}"
+                    },
+                    {
+                        "name": "refresh_token",
+                        "value": "{{refresh_token}}"
+                    },
+                    {
+                        "name": "token_type_hint",
+                        "value": "refresh_token"
+                    }
+                ]
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "document.getElementById('kc-form-login').action",
+                    "action": "setto",
+                    "value": "{{action}}"
+                }
+            ]
+        },
+        {
+            "_id": "461e1d86-0df4-42c9-b5b4-af8b3eab261d",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC UserInfo",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/userinfo",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-09-26T05:20:14.079Z",
+            "modified": "2024-09-26T07:11:47.291Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                }
+            ],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "client_id",
+                        "value": "{{jwtClient}}"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "0ffa034b-2025-4899-87b0-5ccac21bc05e",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC Refresh",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/token",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-09-26T05:40:57.831Z",
+            "modified": "2024-09-26T05:41:30.046Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "client_id",
+                        "value": "{{jwtClient}}"
+                    },
+                    {
+                        "name": "grant_type",
+                        "value": "refresh_token"
+                    },
+                    {
+                        "name": "state",
+                        "value": "fj8o3n7bdy1op5"
+                    },
+                    {
+                        "name": "redirect_uri",
+                        "value": "{{redirect}}",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "refresh_token",
+                        "value": "{{refresh_token}}"
+                    }
+                ]
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.access_token",
+                    "action": "setto",
+                    "value": "{{access_token}}"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "json.refresh_token",
+                    "action": "setto",
+                    "value": "{{refresh_token}}"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "json.id_token",
+                    "action": "setto",
+                    "value": "{{id_token}}"
+                }
+            ]
+        },
+        {
+            "_id": "c4cac197-28f7-41cc-8ed7-7878f0e1b07b",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC Revoke Access Token",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/revoke",
+            "method": "POST",
+            "sortNum": 111250,
+            "created": "2024-09-26T06:26:57.768Z",
+            "modified": "2024-09-26T06:31:02.538Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "client_id",
+                        "value": "{{jwtClient}}"
+                    },
+                    {
+                        "name": "token",
+                        "value": "{{access_token}}"
+                    },
+                    {
+                        "name": "token_type_hint",
+                        "value": "access_token"
+                    }
+                ]
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "document.getElementById('kc-form-login').action",
+                    "action": "setto",
+                    "value": "{{action}}"
+                }
+            ]
+        },
+        {
+            "_id": "ce984004-4aa0-4da4-8cf2-2deea252969c",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC openid-configuration",
+            "url": "{{server}}/realms/{{realm}}/.well-known/openid-configuration",
+            "method": "GET",
+            "sortNum": 112500,
+            "created": "2024-09-26T01:36:46.821Z",
+            "modified": "2024-09-26T01:45:31.485Z",
+            "headers": []
+        },
+        {
+            "_id": "80efd624-1f82-467e-8bbd-408e26340b00",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC jwk-keys",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/certs",
+            "method": "GET",
+            "sortNum": 115000,
+            "created": "2024-09-26T01:36:46.822Z",
+            "modified": "2024-09-26T01:46:09.781Z",
+            "headers": []
+        },
+        {
+            "_id": "2a7de39b-ccdf-4687-a188-4b64e74b6a1a",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC Introspect (confidential only)",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/token/introspect",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2024-09-26T01:36:46.827Z",
+            "modified": "2024-09-26T07:13:00.365Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "ID {{id_token}}",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "token",
+                        "value": "{{access_token}}"
+                    },
+                    {
+                        "name": "client_id",
+                        "value": "{{jwtClient}}"
+                    },
+                    {
+                        "name": "token_type_hint",
+                        "value": "access_token"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "3fec79e0-5438-4b01-b55e-952c516d7d24",
+            "colId": "f82ebef7-bfcd-40fb-82c2-bb91535f2b16",
+            "containerId": "",
+            "name": "OIDC Revoke Refresh Token Copy",
+            "url": "{{server}}/realms/{{realm}}/protocol/openid-connect/revoke",
+            "method": "POST",
+            "sortNum": 121250,
+            "created": "2024-09-26T06:30:43.161Z",
+            "modified": "2024-09-26T06:54:50.490Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "client_id",
+                        "value": "{{jwtClient}}"
+                    },
+                    {
+                        "name": "token",
+                        "value": "{{refresh_token}}"
+                    },
+                    {
+                        "name": "token_type_hint",
+                        "value": "refresh_token"
+                    }
+                ]
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "document.getElementById('kc-form-login').action",
+                    "action": "setto",
+                    "value": "{{action}}"
+                }
+            ]
+        }
+    ],
+    "ref": "HSs_VsDDuGCPj59GjBOc2JitdLvGB2EMhNn3pyFizuutwi7ZAzuxM30w3AnG-ORrh22VshuuR0ZIoL3F32CKUg"
+}
